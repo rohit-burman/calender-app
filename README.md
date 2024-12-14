@@ -1,50 +1,62 @@
-# React + TypeScript + Vite
+# Calendar App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple calendar application built with React, Vite, and Tailwind CSS. It allows users to view a calendar, add events, and manage a list of events.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   **Calendar View**: Displays a monthly calendar view where users can navigate between months.
+-   **Event Management**:
+    -   Add new events with a title, description, and date.
+    -   View a list of upcoming events.
+-   **UI Components**: Utilizes modern UI components from the `@shadcn/ui` library.
+-   **Styling**: Styled with Tailwind CSS for a responsive and visually appealing design.
 
-## Expanding the ESLint configuration
+## Running the App Locally
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+To run the app locally, follow these steps:
 
-- Configure the top-level `parserOptions` property like this:
+1. **Install Dependencies**:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+    Make sure you have Node.js and npm installed. Then, navigate to the project directory in your terminal and run:
+
+    ```bash
+    npm install
+    ```
+
+2. **Start the Development Server**:
+
+    Run the following command to start the development server:
+
+    ```bash
+    npm run dev
+    ```
+
+    This will start the app in development mode. Open your web browser and go to `http://localhost:5173` (or the port indicated in your terminal) to view the app.
+
+## Building for Production
+
+To build the app for production, run:
+
+```bash
+npm run build
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+This will create an optimized build of the app in the `dist` directory.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Linting
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+To run ESLint and check for code quality issues, use:
+
+```bash
+npm run lint
 ```
+
+## Previewing the Production Build
+
+To preview the production build locally, run:
+
+```bash
+npm run preview
+```
+
+This will serve the built app from the `dist` directory.
